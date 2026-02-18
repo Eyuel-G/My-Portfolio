@@ -20,15 +20,11 @@ import {
   photoshop,
   illustrator,
   blender,
-  coverhunt,
   alx,
   profound,
   hplife,
   aistarter,
   agile,
-  dcc,
-  kelhel,
-  microverse,
   bootstrap,
 } from '../assets';
 

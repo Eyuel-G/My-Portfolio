@@ -41,10 +41,6 @@ import profound from './company/profound.png';
 import aistarter from './company/aistarter.png';
 import agile from './company/agile.png';
 import hplife from './company/hplife.png';
-import coverhunt from './company/coverhunt.png';
-import dcc from './company/dcc.png';
-import kelhel from './company/kelhel.png';
-import microverse from './company/microverse.png';
 
 import tms from './projects/tms.png';
 import lms from './projects/lms.png';
@@ -90,13 +86,9 @@ export {
   lms,
   chefGPT,
   note,
-  coverhunt,
   hplife,
   alx,
   agile,
   profound,
   aistarter,
-  dcc,
-  kelhel,
-  microverse,
 };
