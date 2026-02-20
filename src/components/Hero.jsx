@@ -24,15 +24,12 @@ const Hero = () => {
         if (displayedText.length < currentFullText.length) {
           setDisplayedText(currentFullText.slice(0, displayedText.length + 1));
         } else {
-          // Finished typing, wait then start deleting
           setTimeout(() => setIsDeleting(true), 2000);
         }
       } else {
-        // Deleting backward
         if (displayedText.length > 0) {
           setDisplayedText(currentFullText.slice(0, displayedText.length - 1));
         } else {
-          // Finished deleting, move to next text
           setIsDeleting(false);
           setCurrentTextIndex((prevIndex) => (prevIndex + 1) % rotatingTexts.length);
         }
@@ -189,7 +186,7 @@ const Hero = () => {
         transition={{ duration: 1, delay: 0.5 }}
         className="absolute
   bottom-8 right-1/2 translate-x-1/2
-  xs:bottom-12 xs:right-4 xs:translate-x-0
+  xs:top-16 xs:right-4 xs:translate-x-0
   sm:top-[60%] sm:right-[-2%] sm:-translate-y-1/2
   md:top-[50%] md:right-0
   lg:top-[42%] lg:right-11
@@ -204,7 +201,7 @@ const Hero = () => {
 
       >
         {/* Outer Glow Ring */}
-        <div className="hidden sm:block absolute inset-0 rounded-full bg-gradient-to-br 
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br 
         from-blueAccent via-blueLight to-skyBlue opacity-30 blur-2xl
         animate-pulse"></div>
 
@@ -212,7 +209,7 @@ const Hero = () => {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="hidden sm:block absolute inset-0 rounded-full 
+          className="absolute inset-0 rounded-full 
           bg-gradient-to-br from-blueAccent via-blueLight to-skyBlue
           p-[3px]"
         >
@@ -220,7 +217,7 @@ const Hero = () => {
         </motion.div>
 
         {/* Image Container */}
-        <div className="hidden sm:block absolute inset-[3px] rounded-full overflow-hidden
+        <div className="absolute inset-[3px] rounded-full overflow-hidden
         border-4 border-primary bg-gradient-to-br from-primary/80 to-primary/60
         backdrop-blur-sm shadow-[0_0_60px_rgba(59,130,246,0.4)]">
 
@@ -235,7 +232,7 @@ const Hero = () => {
           />
 
           {/* Overlay Gradient */}
-          <div className="absolute inset-0 bg-gradient-to-br 
+          <div className="absolute inset-0 bg-gradient-to-br
           from-transparent via-transparent to-blueAccent/10"></div>
         </div>
 
