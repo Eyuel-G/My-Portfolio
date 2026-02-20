@@ -37,6 +37,15 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .nav-links::after {
   content: '';
   display: block;

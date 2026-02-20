@@ -7,7 +7,7 @@ const Hero = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [displayedText, setDisplayedText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   const rotatingTexts = [
     'Full-Stack Developer',
     'Graphics Designer',
@@ -17,7 +17,7 @@ const Hero = () => {
   useEffect(() => {
     const currentFullText = rotatingTexts[currentTextIndex];
     const typingSpeed = isDeleting ? 30 : 80;
-    
+
     const timeout = setTimeout(() => {
       if (!isDeleting) {
         // Typing forward
@@ -43,7 +43,7 @@ const Hero = () => {
   }, [displayedText, isDeleting, currentTextIndex]);
 
   return (
-    <section className="relative w-full h-screen mx-auto overflow-hidden bg-primary">
+    <section className="relative w-full min-h-screen mx-auto overflow-hidden bg-primary">
 
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-96 sm:h-96 bg-blueAccent/20 rounded-full blur-3xl animate-pulse"></div>
@@ -88,7 +88,7 @@ const Hero = () => {
 
       {/* Main Content */}
       <div className={`${styles.paddingX} absolute inset-0 top-[100px] sm:top-[120px] max-w-7xl mx-auto 
-        flex flex-row items-start sm:items-center gap-3 sm:gap-5 z-10`}>
+        flex flex-row items-center sm:items-center gap-3 sm:gap-5 z-10`}>
 
         <div className="flex flex-col justify-center items-center mt-3 sm:mt-5">
           <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-blueAccent shadow-[0_0_20px_rgba(59,130,246,0.8)]" />
@@ -203,32 +203,27 @@ const Hero = () => {
   pointer-events-none z-10"
 
       >
-        {/* Outer Glow Ring */}
         <div className="absolute inset-0 rounded-full bg-gradient-to-br 
         from-blueAccent via-blueLight to-skyBlue opacity-30 blur-2xl
         animate-pulse"></div>
 
-        {/* Rotating Border */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute inset-0 rounded-full 
           bg-gradient-to-br from-blueAccent via-blueLight to-skyBlue
-          p-[3px]"
+          p-[2px] sm:p-[3px]"
         >
           <div className="w-full h-full rounded-full bg-primary"></div>
         </motion.div>
 
-        {/* Image Container */}
-        <div className="absolute inset-[3px] rounded-full overflow-hidden
-        border-4 border-primary bg-gradient-to-br from-primary/80 to-primary/60
+        <div className="absolute inset-[2px] sm:inset-[3px] rounded-full overflow-hidden
+        border-2 sm:border-4 border-primary bg-gradient-to-br from-primary/80 to-primary/60
         backdrop-blur-sm shadow-[0_0_60px_rgba(59,130,246,0.4)]">
 
-          {/* Inner Glow */}
-          <div className="absolute inset-0 bg-gradient-to-t 
+          <div className="absolute inset-0 bg-gradient-to-t
           from-blueAccent/20 via-transparent to-transparent"></div>
 
-          {/* Profile Image */}
           <img
             src={profile}
             alt="profile"
@@ -251,14 +246,14 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, type: "spring" }}
           className="absolute -bottom-1 sm:-bottom-2 left-1/2 -translate-x-1/2
-          px-3 py-1.5 sm:px-4 sm:py-2 rounded-full
+          px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full
           bg-primary/90 backdrop-blur-md
           border border-blueAccent/50
           shadow-[0_0_20px_rgba(59,130,246,0.4)]
           flex items-center gap-1.5 sm:gap-2"
         >
           <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-pulse"></span>
-          <span className="text-white text-[10px] sm:text-[12px] font-semibold font-poppins whitespace-nowrap">
+          <span className="text-white text-[9px] sm:text-[10px] md:text-[12px] font-semibold font-poppins whitespace-nowrap">
             Available for work
           </span>
         </motion.div>
