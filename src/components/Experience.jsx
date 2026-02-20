@@ -62,28 +62,26 @@ const JourneyCard = ({ experience, index }) => {
         viewport={{ once: true }}
         className="relative"
       >
-        {/* Title and Company */}
-        <h3 className="text-white text-[24px] font-bold font-beckman tracking-wide
+        <h3 className="text-white text-[18px] sm:text-[20px] md:text-[24px] font-bold font-beckman tracking-wide
         mb-2">
           {experience.title}
         </h3>
-        <p className="text-blueLight text-[18px] font-semibold font-poppins 
+        <p className="text-blueLight text-[14px] sm:text-[16px] md:text-[18px] font-semibold font-poppins 
         tracking-wide mb-3 flex items-center gap-2">
-          <span className="w-2 h-2 bg-blueAccent rounded-full"></span>
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blueAccent rounded-full"></span>
           {experience.company_name}
         </p>
         
-        {/* What I Learned / Key Points */}
         {experience.points && (
-          <div className="mt-4">
-            <h4 className="text-white/90 text-[16px] font-semibold font-poppins mb-2">
+          <div className="mt-3 sm:mt-4">
+            <h4 className="text-white/90 text-[13px] sm:text-[14px] md:text-[16px] font-semibold font-poppins mb-2">
               What I Learned:
             </h4>
-            <ul className="list-disc ml-5 space-y-2">
+            <ul className="list-disc ml-4 sm:ml-5 space-y-1.5 sm:space-y-2">
               {experience.points.map((point, idx) => (
                 <li
                   key={`experience-point-${idx}`}
-                  className="text-white-100/80 text-[14px] pl-1 tracking-wide leading-relaxed"
+                  className="text-white-100/80 text-[12px] sm:text-[13px] md:text-[14px] pl-1 tracking-wide leading-relaxed"
                 >
                   {point}
                 </li>
@@ -92,13 +90,12 @@ const JourneyCard = ({ experience, index }) => {
           </div>
         )}
         
-        {/* Certificate Section */}
         {hasCertificate && (
-          <div className="mt-6">
-            <h4 className="text-white/90 text-[16px] font-semibold font-poppins mb-3 
+          <div className="mt-4 sm:mt-6">
+            <h4 className="text-white/90 text-[13px] sm:text-[14px] md:text-[16px] font-semibold font-poppins mb-2 sm:mb-3 
             flex items-center gap-2">
               <svg 
-                className="w-5 h-5 text-green-400" 
+                className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" 
                 fill="currentColor" 
                 viewBox="0 0 20 20"
               >
@@ -126,17 +123,17 @@ const JourneyCard = ({ experience, index }) => {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="absolute bottom-4 right-4 px-4 py-2 
+                className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 px-3 py-1.5 sm:px-4 sm:py-2 
                 bg-green-500/90 backdrop-blur-sm
-                text-white text-[14px] font-bold font-beckman
+                text-white text-[11px] sm:text-[12px] md:text-[14px] font-bold font-beckman
                 rounded-lg border border-white/20
                 hover:bg-green-600 transition-all duration-300
                 shadow-lg hover:shadow-green-500/50
-                flex items-center gap-2"
+                flex items-center gap-1.5 sm:gap-2"
               >
                 <span>View Certificate</span>
                 <svg 
-                  className="w-4 h-4" 
+                  className="w-3 h-3 sm:w-4 sm:h-4" 
                   fill="none" 
                   stroke="currentColor" 
                   viewBox="0 0 24 24"
@@ -216,9 +213,9 @@ const Experience = () => {
   whileTap={{ scale: 0.95 }}
   href="/Eyuel's_Resume.pdf"
   download
-  className="flex justify-center items-center gap-3
-    sm:text-[16px] text-[14px] text-white 
-    font-bold font-beckman py-4 px-8
+  className="flex justify-center items-center gap-2 sm:gap-3
+    text-[13px] sm:text-[14px] md:text-[16px] text-white 
+    font-bold font-beckman py-3 px-6 sm:py-4 sm:px-8
     rounded-xl bg-blueAccent/80 backdrop-blur-sm
     border border-blueLight/50
     hover:bg-blueLight hover:border-white/50
@@ -240,8 +237,8 @@ const Experience = () => {
   <img
     src={download}
     alt="download"
-    className="download-btn sm:w-[24px] sm:h-[24px] 
-      w-[20px] h-[20px] object-contain
+    className="download-btn w-[18px] h-[18px] sm:w-[20px] sm:h-[20px] md:w-[24px] md:h-[24px] 
+      object-contain
       group-hover:animate-bounce"
   />
 </motion.a>

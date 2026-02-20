@@ -9,7 +9,7 @@ const TechCard = ({ technology, index }) => {
   return (
     <motion.div
       variants={fadeIn('up', 'spring', index * 0.1, 0.75)}
-      className="w-28 h-28 group"
+      className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 group"
     >
       <div className="relative w-full h-full">
         {/* Glow effect on hover */}
@@ -30,12 +30,11 @@ const TechCard = ({ technology, index }) => {
           <BallCanvas icon={technology.icon} />
         </div>
         
-        {/* Tech name tooltip */}
-        <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 
+        <div className="absolute -bottom-6 sm:-bottom-8 left-1/2 -translate-x-1/2 
           opacity-0 group-hover:opacity-100 transition-all duration-300
           whitespace-nowrap pointer-events-none">
-          <span className="text-white text-[12px] font-semibold font-poppins
-            bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full
+          <span className="text-white text-[10px] sm:text-[11px] md:text-[12px] font-semibold font-poppins
+            bg-primary/90 backdrop-blur-md px-2 py-1 sm:px-3 sm:py-1 rounded-full
             border border-blueAccent/50 shadow-lg">
             {technology.name}
           </span>
@@ -58,18 +57,16 @@ const Tech = () => {
         </h2>
       </motion.div>
 
-      {/* Description */}
       <motion.p
         variants={fadeIn('', '', 0.1, 1)}
-        className="mt-4 text-white-100/70 text-[17px] max-w-3xl leading-[30px]"
+        className="mt-3 sm:mt-4 text-white-100/70 text-[14px] sm:text-[15px] md:text-[17px] max-w-3xl leading-[24px] sm:leading-[28px] md:leading-[30px]"
       >
         I have experience working with a diverse range of technologies and tools
         that enable me to build robust, scalable, and modern applications. Here are
         some of the key technologies I use regularly.
       </motion.p>
 
-      {/* Tech Grid */}
-      <div className="mt-20 flex flex-wrap justify-center gap-12">
+      <div className="mt-12 sm:mt-16 md:mt-20 flex flex-wrap justify-center gap-8 sm:gap-10 md:gap-12">
         {technologies.map((technology, index) => (
           <TechCard
             key={technology.name}

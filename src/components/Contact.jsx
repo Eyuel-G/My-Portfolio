@@ -128,8 +128,8 @@ const Contact = () => {
         </h2>
       </motion.div>
 
-      <div className="grid lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-1 space-y-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="lg:col-span-1 space-y-3 sm:space-y-4">
           <ContactInfo
             icon={
               <svg className="w-6 h-6 text-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -211,26 +211,26 @@ const Contact = () => {
 
         <motion.div
           variants={fadeIn('left', 'tween', 0.2, 1)}
-          className="lg:col-span-2 bg-primary/40 backdrop-blur-md p-8 md:p-10 rounded-3xl
+          className="lg:col-span-2 bg-primary/40 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-3xl
           border border-blueAccent/30 shadow-[0_0_40px_rgba(59,130,246,0.2)]
           hover:shadow-[0_0_50px_rgba(59,130,246,0.3)] transition-all duration-500"
         >
-          <h3 className="text-white text-[28px] font-bold font-beckman mb-2">
+          <h3 className="text-white text-[22px] sm:text-[26px] md:text-[28px] font-bold font-beckman mb-2">
             Send Me a Message
           </h3>
-          <p className="text-white-100/70 text-[15px] mb-8">
+          <p className="text-white-100/70 text-[13px] sm:text-[14px] md:text-[15px] mb-6 sm:mb-8">
             Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible.
           </p>
 
           <form
             ref={formRef}
             onSubmit={handleSubmit}
-            className="flex flex-col gap-6 font-poppins"
+            className="flex flex-col gap-4 sm:gap-6 font-poppins"
           >
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
               <label className="flex flex-col">
-                <span className="text-white font-medium mb-3 flex items-center gap-2">
-                  <svg className="w-4 h-4 text-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-white font-medium mb-2 sm:mb-3 flex items-center gap-2 text-[13px] sm:text-[14px]">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   Your Name
@@ -242,8 +242,8 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="bg-primary/60 backdrop-blur-sm py-4 px-6 
-                  placeholder:text-white-100/40 text-white rounded-xl 
+                  className="bg-primary/60 backdrop-blur-sm py-3 px-4 sm:py-4 sm:px-6 
+                  placeholder:text-white-100/40 text-white text-[13px] sm:text-[14px] rounded-xl 
                   outline-none border border-blueAccent/30 
                   focus:border-blueAccent focus:shadow-[0_0_15px_rgba(59,130,246,0.3)]
                   transition-all duration-300 font-medium"
@@ -251,8 +251,8 @@ const Contact = () => {
               </label>
 
               <label className="flex flex-col">
-                <span className="text-white font-medium mb-3 flex items-center gap-2">
-                  <svg className="w-4 h-4 text-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="text-white font-medium mb-2 sm:mb-3 flex items-center gap-2 text-[13px] sm:text-[14px]">
+                  <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   Your Email
@@ -264,8 +264,8 @@ const Contact = () => {
                   onChange={handleChange}
                   placeholder="john@example.com"
                   required
-                  className="bg-primary/60 backdrop-blur-sm py-4 px-6 
-                  placeholder:text-white-100/40 text-white rounded-xl 
+                  className="bg-primary/60 backdrop-blur-sm py-3 px-4 sm:py-4 sm:px-6 
+                  placeholder:text-white-100/40 text-white text-[13px] sm:text-[14px] rounded-xl 
                   outline-none border border-blueAccent/30 
                   focus:border-blueAccent focus:shadow-[0_0_15px_rgba(59,130,246,0.3)]
                   transition-all duration-300 font-medium"
@@ -274,8 +274,8 @@ const Contact = () => {
             </div>
 
             <label className="flex flex-col">
-              <span className="text-white font-medium mb-3 flex items-center gap-2">
-                <svg className="w-4 h-4 text-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span className="text-white font-medium mb-2 sm:mb-3 flex items-center gap-2 text-[13px] sm:text-[14px]">
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blueLight" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
                 </svg>
                 Your Message
@@ -287,8 +287,8 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Tell me about your project..."
                 required
-                className="bg-primary/60 backdrop-blur-sm py-4 px-6 
-                placeholder:text-white-100/40 text-white rounded-xl 
+                className="bg-primary/60 backdrop-blur-sm py-3 px-4 sm:py-4 sm:px-6 
+                placeholder:text-white-100/40 text-white text-[13px] sm:text-[14px] rounded-xl 
                 outline-none border border-blueAccent/30 
                 focus:border-blueAccent focus:shadow-[0_0_15px_rgba(59,130,246,0.3)]
                 transition-all duration-300 font-medium resize-none"
@@ -300,9 +300,9 @@ const Contact = () => {
               whileHover={{ scale: 1.02, y: -2 }}
               whileTap={{ scale: 0.98 }}
               disabled={loading}
-              className="flex justify-center items-center gap-3
-              text-[16px] text-white font-bold font-beckman 
-              py-4 px-8 rounded-xl
+              className="flex justify-center items-center gap-2 sm:gap-3
+              text-[14px] sm:text-[16px] text-white font-bold font-beckman 
+              py-3 px-6 sm:py-4 sm:px-8 rounded-xl
               bg-gradient-to-r from-blueAccent to-blueLight
               hover:from-blueLight hover:to-blueAccent
               border border-white/20
@@ -330,7 +330,7 @@ const Contact = () => {
               <img
                 src={send}
                 alt="send"
-                className="contact-btn w-5 h-5 object-contain relative z-10
+                className="contact-btn w-4 h-4 sm:w-5 sm:h-5 object-contain relative z-10
                 group-hover:translate-x-1 transition-transform duration-300"
               />
             </motion.button>

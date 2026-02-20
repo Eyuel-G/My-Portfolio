@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { styles } from '../styles';
 import { profile } from '../assets';
@@ -46,13 +46,11 @@ const Hero = () => {
     <section className="relative w-full h-screen mx-auto overflow-hidden bg-primary">
 
       <div className="absolute inset-0 overflow-hidden">
-        {/* Gradient Orbs */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-blueAccent/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-skyBlue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-96 sm:h-96 bg-blueAccent/20 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 h-48 sm:w-96 sm:h-96 bg-skyBlue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
-        w-[600px] h-[600px] bg-blueDark/10 rounded-full blur-3xl animate-pulse delay-500"></div>
+        w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-blueDark/10 rounded-full blur-3xl animate-pulse delay-500"></div>
 
-        {/* Grid Pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-5"></div>
 
         {/* Animated Lines */}
@@ -89,13 +87,12 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto 
-        flex flex-row items-center gap-5 z-10`}>
+      <div className={`${styles.paddingX} absolute inset-0 top-[100px] sm:top-[120px] max-w-7xl mx-auto 
+        flex flex-row items-start sm:items-center gap-3 sm:gap-5 z-10`}>
 
-        {/* Decorative Line */}
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-blueAccent shadow-[0_0_20px_rgba(59,130,246,0.8)]" />
-          <div className="w-1 sm:h-80 h-40 bg-gradient-to-b from-blueAccent via-blueLight to-transparent" />
+        <div className="flex flex-col justify-center items-center mt-3 sm:mt-5">
+          <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-blueAccent shadow-[0_0_20px_rgba(59,130,246,0.8)]" />
+          <div className="w-1 h-32 sm:h-80 bg-gradient-to-b from-blueAccent via-blueLight to-transparent" />
         </div>
 
         {/* Text Content */}
@@ -105,12 +102,12 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h1 className={`${styles.heroHeadText} text-white font-poppins`}>
+            <h1 className="font-black text-white lg:text-[60px] md:text-[50px] sm:text-[40px] xs:text-[32px] text-[28px] lg:leading-[70px] md:leading-[60px] sm:leading-[50px] leading-[40px] mt-2 font-poppins">
               Hi, I'm{' '}
               <motion.span
                 className="block sm:inline text-transparent bg-clip-text 
                 bg-gradient-to-r from-blueAccent via-blueLight to-skyBlue
-                font-extrabold uppercase sm:text-[90px] text-[50px]
+                font-extrabold uppercase lg:text-[90px] md:text-[70px] sm:text-[60px] xs:text-[45px] text-[38px]
                 drop-shadow-[0_0_30px_rgba(59,130,246,0.5)]"
                 animate={{
                   backgroundPosition: ['0%', '100%', '0%'],
@@ -129,15 +126,15 @@ const Hero = () => {
             </h1>
           </motion.div>
 
-          <div className={`${styles.heroSubText} mt-4 text-white-100/80 min-h-[80px] sm:min-h-[60px]`}>
+          <div className="text-white-100 font-bold lg:text-[32px] md:text-[26px] sm:text-[22px] xs:text-[18px] text-[16px] lg:leading-[40px] md:leading-[34px] sm:leading-[28px] leading-[24px] mt-3 sm:mt-4 text-white-100/80 min-h-[60px] sm:min-h-[50px]">
             <div className="flex items-center gap-1">
-              <span className="text-blue-500 font-mono">
+              <span className="text-blue-500 font-mono text-[14px] xs:text-[16px] sm:text-[18px] md:text-[22px] lg:text-[26px]">
                 {displayedText}
               </span>
               <motion.span
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
-                className="inline-block w-[3px] h-[1.2em] bg-blueLight ml-1"
+                className="inline-block w-[2px] sm:w-[3px] h-[1.2em] bg-blueLight ml-1"
               />
             </div>
           </div>
@@ -147,13 +144,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="mt-10 flex flex-wrap gap-4"
+            className="mt-6 sm:mt-10 flex flex-wrap gap-3 sm:gap-4"
           >
             <motion.a
               href="#projects"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-xl font-bold font-beckman text-[16px]
+              className="px-5 py-3 sm:px-8 sm:py-4 rounded-xl font-bold font-beckman text-[13px] sm:text-[16px]
               bg-gradient-to-r from-blueAccent to-blueLight
               text-white border border-white/20
               shadow-[0_0_30px_rgba(59,130,246,0.5)]
@@ -172,7 +169,7 @@ const Hero = () => {
               href="#contact"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 rounded-xl font-bold font-beckman text-[16px]
+              className="px-5 py-3 sm:px-8 sm:py-4 rounded-xl font-bold font-beckman text-[13px] sm:text-[16px]
               bg-primary/60 backdrop-blur-sm
               text-white border-2 border-blueAccent/50
               hover:bg-blueAccent/20 hover:border-blueAccent
@@ -191,14 +188,15 @@ const Hero = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         className="absolute
-  top-[65%] right-4
-  sm:top-[56%] sm:right-[-2%]
-  md:top-[45%] md:right-0
-  lg:top-[39%] lg:right-11
+  bottom-8 right-1/2 translate-x-1/2
+  xs:bottom-12 xs:right-4 xs:translate-x-0
+  sm:top-[60%] sm:right-[-2%] sm:-translate-y-1/2
+  md:top-[50%] md:right-0
+  lg:top-[42%] lg:right-11
   xl:top-1/4 xl:right-5
-  -translate-y-1/2
-  w-[280px] h-[280px]
-  sm:w-[300px] sm:h-[300px]
+  w-[200px] h-[200px]
+  xs:w-[240px] xs:h-[240px]
+  sm:w-[280px] sm:h-[280px]
   md:w-[320px] md:h-[320px]
   lg:w-[420px] lg:h-[420px]
   xl:w-[480px] xl:h-[480px]
@@ -243,47 +241,45 @@ const Hero = () => {
           from-transparent via-transparent to-blueAccent/10"></div>
         </div>
 
-        {/* Decorative Dots */}
-        <div className="absolute -top-4 -right-4 w-3 h-3 rounded-full 
+        <div className="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 w-2 h-2 sm:w-3 sm:h-3 rounded-full 
         bg-blueAccent shadow-[0_0_20px_rgba(59,130,246,0.8)] animate-pulse"></div>
-        <div className="absolute -bottom-4 -left-4 w-3 h-3 rounded-full 
+        <div className="absolute -bottom-2 sm:-bottom-4 -left-2 sm:-left-4 w-2 h-2 sm:w-3 sm:h-3 rounded-full 
         bg-skyBlue shadow-[0_0_20px_rgba(14,165,233,0.8)] animate-pulse delay-500"></div>
 
-        {/* Status Badge */}
         <motion.div
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, type: "spring" }}
-          className="absolute -bottom-2 left-1/2 -translate-x-1/2
-          px-4 py-2 rounded-full
+          className="absolute -bottom-1 sm:-bottom-2 left-1/2 -translate-x-1/2
+          px-3 py-1.5 sm:px-4 sm:py-2 rounded-full
           bg-primary/90 backdrop-blur-md
           border border-blueAccent/50
           shadow-[0_0_20px_rgba(59,130,246,0.4)]
-          flex items-center gap-2"
+          flex items-center gap-1.5 sm:gap-2"
         >
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-          <span className="text-white text-[12px] font-semibold font-poppins">
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-pulse"></span>
+          <span className="text-white text-[10px] sm:text-[12px] font-semibold font-poppins whitespace-nowrap">
             Available for work
           </span>
         </motion.div>
       </motion.div>
 
       {/* Scroll Indicator */}
-      <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center z-10">
+      <div className="absolute bottom-8 xs:bottom-10 w-full flex justify-center items-center z-10">
         <a href="#about">
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, repeatType: 'loop' }}
-            className="w-[35px] h-[64px] rounded-3xl border-4 border-blueAccent/50
+            className="w-[28px] h-[50px] sm:w-[35px] sm:h-[64px] rounded-3xl border-3 sm:border-4 border-blueAccent/50
             backdrop-blur-sm bg-primary/30
-            flex justify-center items-start p-2
+            flex justify-center items-start p-1.5 sm:p-2
             hover:border-blueAccent transition-colors duration-300
             shadow-[0_0_20px_rgba(59,130,246,0.3)]"
           >
             <motion.div
-              animate={{ y: [0, 24, 0] }}
+              animate={{ y: [0, 18, 0] }}
               transition={{ duration: 1.5, repeat: Infinity, repeatType: 'loop' }}
-              className="w-3 h-3 rounded-full bg-blueAccent 
+              className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-blueAccent 
               shadow-[0_0_10px_rgba(59,130,246,0.8)]"
             />
           </motion.div>
