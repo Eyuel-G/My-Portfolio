@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { styles } from '../styles';
 import { navLinks } from '../constants';
@@ -7,18 +7,6 @@ import { close, menu, logo } from '../assets';
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
-
-  useEffect(() => {
-    if (toggle) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [toggle]);
 
   return (
     <nav
@@ -69,9 +57,8 @@ const Navbar = () => {
         <div className="sm:hidden flex flex-1 w-screen justify-end items-center">
           {toggle ? (
             <div
-              className={`p-6 bg-primary/95 backdrop-blur-lg fixed 
-                top-0 left-0 w-screen h-screen z-10 menu border-r border-blueAccent/20
-                overflow-y-auto
+              className={`p-6 bg-primary/95 backdrop-blur-lg absolute 
+                top-0 left-0 w-screen h-[100vh] z-10 menu border-r border-blueAccent/20
                 ${toggle ? 'menu-open' : 'menu-close'}`}>
               <div className="flex justify-end">
                 <img
@@ -79,7 +66,7 @@ const Navbar = () => {
                   alt="close"
                   className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] object-contain cursor-pointer 
                   filter brightness-0 invert hover:opacity-70 transition-opacity duration-300"
-                  onClick={() => setToggle(false)}
+                  onClick={() => setToggle(!toggle)}
                 />
               </div>
               <ul
@@ -95,7 +82,7 @@ const Navbar = () => {
                       hover:text-blueLight transition-colors duration-300
                       border-l-4 border-transparent hover:border-blueLight pl-3 sm:pl-4`}
                     onClick={() => {
-                      setToggle(false);
+                      setToggle(!toggle);
                       setActive(nav.title);
                     }}>
                     <a href={`#${nav.id}`}>{nav.title}</a>
@@ -109,7 +96,7 @@ const Navbar = () => {
               alt="menu"
               className="w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] object-contain cursor-pointer 
               filter brightness-0 invert hover:opacity-70 transition-opacity duration-300"
-              onClick={() => setToggle(true)}
+              onClick={() => setToggle(!toggle)}
             />
           )}
         </div>

@@ -43,9 +43,9 @@ const Hero = () => {
   }, [displayedText, isDeleting, currentTextIndex]);
 
   return (
-    <section className="relative w-full min-h-screen mx-auto overflow-hidden bg-primary">
+    <section className="relative w-full min-h-screen mx-auto bg-primary" style={{ overflow: 'visible' }}>
 
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 h-48 sm:w-96 sm:h-96 bg-blueAccent/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-48 h-48 sm:w-96 sm:h-96 bg-skyBlue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 
@@ -203,22 +203,25 @@ const Hero = () => {
   pointer-events-none z-10"
 
       >
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br 
+        {/* Outer Glow Ring */}
+        <div className="hidden sm:block absolute inset-0 rounded-full bg-gradient-to-br 
         from-blueAccent via-blueLight to-skyBlue opacity-30 blur-2xl
         animate-pulse"></div>
 
+        {/* Rotating Border */}
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-0 rounded-full 
+          className="hidden sm:block absolute inset-0 rounded-full 
           bg-gradient-to-br from-blueAccent via-blueLight to-skyBlue
-          p-[2px] sm:p-[3px]"
+          p-[3px]"
         >
           <div className="w-full h-full rounded-full bg-primary"></div>
         </motion.div>
 
-        <div className="absolute inset-[2px] sm:inset-[3px] rounded-full overflow-hidden
-        border-2 sm:border-4 border-primary bg-gradient-to-br from-primary/80 to-primary/60
+        {/* Image Container */}
+        <div className="hidden sm:block absolute inset-[3px] rounded-full overflow-hidden
+        border-4 border-primary bg-gradient-to-br from-primary/80 to-primary/60
         backdrop-blur-sm shadow-[0_0_60px_rgba(59,130,246,0.4)]">
 
           <div className="absolute inset-0 bg-gradient-to-t
@@ -245,15 +248,15 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.2, type: "spring" }}
-          className="absolute -bottom-1 sm:-bottom-2 left-1/2 -translate-x-1/2
-          px-2 py-1 sm:px-3 sm:py-1.5 md:px-4 md:py-2 rounded-full
+          className="hidden sm:flex absolute -bottom-1 sm:-bottom-2 left-1/2 -translate-x-1/2
+          px-3 py-1.5 sm:px-4 sm:py-2 rounded-full
           bg-primary/90 backdrop-blur-md
           border border-blueAccent/50
           shadow-[0_0_20px_rgba(59,130,246,0.4)]
-          flex items-center gap-1.5 sm:gap-2"
+          items-center gap-1.5 sm:gap-2"
         >
           <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-green-400 animate-pulse"></span>
-          <span className="text-white text-[9px] sm:text-[10px] md:text-[12px] font-semibold font-poppins whitespace-nowrap">
+          <span className="text-white text-[10px] sm:text-[12px] font-semibold font-poppins whitespace-nowrap">
             Available for work
           </span>
         </motion.div>

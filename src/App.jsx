@@ -12,8 +12,8 @@ import {
 const App = () => {
   return (
     <BrowserRouter>
-      <div className="relative z-0">
-        <div>
+      <div className="relative z-0 w-full">
+        <div className="relative">
           <Navbar />
           <Hero />
         </div>
